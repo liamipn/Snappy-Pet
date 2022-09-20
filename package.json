@@ -1,5 +1,5 @@
 {
-  "name": "shopify-sunrise",
+  "name": "Snappy Pet",
   "version": "1.0.0",
   "description": "Open-sourced Shopify Store 2.0 Starter theme with Tailwind CSS and Alpinejs. This repo is based on YouTube Course for Shopify Theme development for Store 2.0.",
   "main": "tailwind.config.js",
