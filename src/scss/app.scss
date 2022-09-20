@@ -9,7 +9,7 @@ $btn-height: 44px;
 .header{
     display: grid;
     grid-template-areas: "header-logo header-menu header-icons";
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
     .header__logo{
         grid-area: header-logo;
     }
