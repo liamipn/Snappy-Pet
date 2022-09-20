@@ -1,4 +1,4 @@
-<div class="">
+<div class="bg-[#f1ece7]">
   <header class="header items-center page-width">
   
       <div class="header__logo mx-auto my-2 md:my-0 md:mr-auto md:ml-0" style="max-width: {{ section.settings.logo_width }}px;">
@@ -21,7 +21,7 @@
         <ul class="header__menu-nav hidden md:flex">
           {% for link in section.settings.menu.links %}
             {% if link.links != blank %}
-              <li class="nav__item py-10 px-4 block relative">
+              <li class="nav__item py-12 px-4 block relative">
                   <a href="{{ link.url }}">{{ link.title }}</a>
                   <ul class="nav__item-submenu absolute bg-white border py-3 px-4 min-w-[160px] top-16 left-1/2 transform -translate-x-1/2">
                     {% for sublink in linklists[link.handle].links %}
@@ -35,7 +35,7 @@
               </li>
             {% else %}
               <li>
-                <a class="nav__item py-10 px-4 block" href="{{ link.url }}"> {{ link.title }}</a>
+                <a class="nav__item py-12 px-4 block" href="{{ link.url }}"> {{ link.title }}</a>
               </li>
             {% endif %}
           {% endfor %}
