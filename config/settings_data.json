@@ -2,7 +2,7 @@
   "current": {
     "type_header_font": "avenir_next_n6",
     "type_body_font": "avenir_next_n4",
-    "page_width": 1600,
+    "page_width": 1000,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
