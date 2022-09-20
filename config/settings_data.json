@@ -8,6 +8,7 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "<p>Welcome to our store<\/p>",
               "bg_color": "#ffffff",
