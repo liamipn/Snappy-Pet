@@ -1,5 +1,8 @@
 {
   "current": {
+    "colors_solid_button_labels": "#FFFFFF",
+    "colors_accent_1": "#56700f",
+    "colors_outline_button_labels": "#56700f",
     "type_header_font": "avenir_next_n6",
     "type_body_font": "avenir_next_n4",
     "page_width": 1000,
@@ -28,7 +31,7 @@
         "type": "header",
         "settings": {
           "logo": "shopify:\/\/shop_images\/snappy-pets-logo_d82cb1de-2340-415b-bd11-b87b65e83d08.png",
-          "logo_width": 140,
+          "logo_width": 200,
           "logo_position": "middle-left",
           "menu": "main-menu",
           "show_line_separator": true,
