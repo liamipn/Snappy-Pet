@@ -1,5 +1,5 @@
 
-<footer class="footer pt-8 mt-8">
+<footer class="footer pt-8 mt-8 bg-[#f1ece7]">
   {% if section.settings.show_newsletter %}
     <div class="footer__newsletter page-width">
       {% if section.settings.newsletter_title != blank %}
@@ -25,7 +25,7 @@
       {%- if section.blocks.size > 0 -%}
         <div class="footer__blocks-wrapper grid grid-cols-1 md:grid-cols-4 gap-4">
           {%- for block in section.blocks -%}
-            <div class="footer-block bg-white grid__item{% if block.type == 'link_list' and block.settings.heading != blank %} footer-block--menu{% endif %}" {{ block.shopify_attributes }}>
+            <div class="footer-block grid__item{% if block.type == 'link_list' and block.settings.heading != blank %} footer-block--menu{% endif %}" {{ block.shopify_attributes }}>
               {%- if block.settings.heading != blank -%}
                 <h3 class="footer-block__heading font-medium uppercase mb-2 text-lg">{{- block.settings.heading | escape -}}</h3>
               {%- endif -%}
