@@ -43,18 +43,25 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "53c1c391-33d3-4045-94f0-77c637d06874": {
-            "type": "image",
+          "footer-1": {
+            "type": "link_list",
             "settings": {
-              "image_width": 100,
-              "alignment": "center"
+              "heading": "Quick links",
+              "menu": ""
             }
           },
           "footer-2": {
             "type": "text",
             "settings": {
-              "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "heading": "About Harringtions",
+              "subtext": "<p>At Harringtons, we believe in natural for all, whatever their shape or size! Our family-run business has been going since Great-Grandfather Harrington started milling in 1923.<\/p><p>All our food is proudly manufactured right here in the UK, and we use locally sourced ingredients wherever possible.<\/p>"
+            }
+          },
+          "53c1c391-33d3-4045-94f0-77c637d06874": {
+            "type": "image",
+            "settings": {
+              "image_width": 100,
+              "alignment": "center"
             }
           },
           "footer-0": {
@@ -63,20 +70,13 @@
               "heading": "Company",
               "menu": ""
             }
-          },
-          "footer-1": {
-            "type": "link_list",
-            "settings": {
-              "heading": "Quick links",
-              "menu": ""
-            }
           }
         },
         "block_order": [
-          "53c1c391-33d3-4045-94f0-77c637d06874",
+          "footer-1",
           "footer-2",
-          "footer-0",
-          "footer-1"
+          "53c1c391-33d3-4045-94f0-77c637d06874",
+          "footer-0"
         ],
         "settings": {
           "show_newsletter": false,
