@@ -1412,6 +1412,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0 1rem;
 }
 
+.footer-width {
+  max-width: var(--footer-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .shopify-payment-button button {
   border-radius: 0.125rem;
   --tw-bg-opacity: 1;

@@ -158,6 +158,16 @@
       },
       {
         "type": "range",
+        "id": "footer_width",
+        "min": 800,
+        "max": 1600,
+        "step": 100,
+        "default": 1000,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.footer_width.label"
+      },
+      {
+        "type": "range",
         "id": "spacing_sections",
         "min": 0,
         "max": 100,

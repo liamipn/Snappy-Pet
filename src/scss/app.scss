@@ -43,9 +43,13 @@ $btn-height: 44px;
     margin: 0 auto;
     padding: 0 1rem;
 }
-
 .page-width{
     max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.footer-width {
+    max-width: var(--footer-width);
     margin: 0 auto;
     padding: 0 1rem;
 }

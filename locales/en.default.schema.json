@@ -310,6 +310,9 @@
         "page_width": {
           "label": "Page width"
         },
+        "footer_width": {
+          "label": "Footer width"
+        },
         "spacing_sections": {
           "label": "Vertical space between sections"
         },
