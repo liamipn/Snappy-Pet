@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Sunrise",
+    "theme_name": "Snappy Pet",
     "theme_version": "1.0",
     "theme_author": "Codeinspire",
     "theme_documentation_url": "https:\/\/codeinspire.io\/",
@@ -137,6 +137,10 @@
     "name": "t:settings_schema.layout.name",
     "settings": [
       {
+        "type": "header",
+        "content": "t:settings_schema.layout.settings.header__grid.content"
+      },
+      {
         "type": "range",
         "id": "header_width",
         "min": 1000,
@@ -145,6 +149,20 @@
         "default": 1000,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.header_width.label"
+      },
+      {
+        "type": "range",
+        "id": "spacing_sections",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.spacing_sections.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.layout.settings.header__grid.content"
       },
       {
         "type": "range",
