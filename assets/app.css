@@ -898,17 +898,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-2 {
   gap: 0.5rem;
 }
-.gap-6 {
-  gap: 1.5rem;
+.gap-10 {
+  gap: 2.5rem;
 }
 .gap-3 {
   gap: 0.75rem;
-}
-.gap-8 {
-  gap: 2rem;
-}
-.gap-10 {
-  gap: 2.5rem;
 }
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -929,6 +923,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 .-space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1050,7 +1049,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-\[\#f1ece7\] {
+.bg-sp-beige-1 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 236 231 / var(--tw-bg-opacity));
 }
@@ -1442,15 +1441,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
-  border-radius: 0.125rem;
+  border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(86 112 15 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.button__primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 87 14 / var(--tw-bg-opacity));
 }
 
 .product-form__input input[type=radio]:checked + label {
@@ -1607,10 +1617,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 768px) {
 
-  .md\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -1681,16 +1687,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:flex-row {

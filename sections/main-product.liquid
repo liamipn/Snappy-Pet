@@ -72,9 +72,83 @@
                 {{ form | payment_terms }}
               {%- endform -%}
             </div>
+          {%- when 'buy_buttons' -%}
+            <div x-data="{ 
+                qty: 1,
+                addToCart(){
+                  let formData = new FormData($refs.product_form);
+
+                  fetch('/cart/add.js', {
+                      method: 'POST',
+                      body: formData
+                    })
+                    .then(response => {
+                      return response.json();
+                    })
+                    .then(response => {
+                      this.$dispatch('cart-updated');
+                      this.$dispatch('toggle-cart');
+                    })
+                    .catch((error) => {
+                      console.error('Error:', error);
+                    });
+
+                }
+              }"
+              @quantity-changed.window="qty = $event.detail.quantity"
+              >
+             
+                {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', x-ref: 'product_form' -%}
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                  <input type="hidden" name="quantity" x-model="qty" value="1">
+                  <div class="product-form__buttons">
+                    <button
+                      type="button"
+                      name="add"
+                      @click="addToCart()"
+                      class="add-to-cart-button button__primary w-full justify-center"
+                    {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                    >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available -%}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                    </button>
+                    {%- if block.settings.show_dynamic_checkout -%}
+                      {{ form | payment_button }}
+                    {%- endif -%}
+                  </div>
+                {%- endform -%}
+
+              {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+              {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
+
+              <pickup-availability class="product__pickup-availabilities no-js-hidden"
+                {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %} available{% endif %}
+                data-root-url="{{ routes.root_url }}"
+                data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                data-has-only-default-variant="{{ product.has_only_default_variant }}"
+              >
+                <template>
+                  <pickup-availability-preview class="pickup-availability-preview">
+                    {% render 'icon-unavailable' %}
+                    <div class="pickup-availability-info">
+                      <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+                      <button class="pickup-availability-button link link--text underlined-link">{{ 'products.product.pickup_availability.refresh' | t }}</button>
+                    </div>
+                  </pickup-availability-preview>
+                </template>
+              </pickup-availability>
+            </div>
+
+            <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
           {%- when 'description' -%}
             {%- if product.description != blank -%}
-              <div class="product__description rte my-3">
+              <div class="product__description rte my-3 space-y-6">
                 {{ product.description }}
               </div>
             {%- endif -%}
@@ -253,80 +327,7 @@
                 </div>
               </div>
             </noscript>
-          {%- when 'buy_buttons' -%}
-            <div x-data="{ 
-                qty: 1,
-                addToCart(){
-                  let formData = new FormData($refs.product_form);
-
-                  fetch('/cart/add.js', {
-                      method: 'POST',
-                      body: formData
-                    })
-                    .then(response => {
-                      return response.json();
-                    })
-                    .then(response => {
-                      this.$dispatch('cart-updated');
-                      this.$dispatch('toggle-cart');
-                    })
-                    .catch((error) => {
-                      console.error('Error:', error);
-                    });
-
-                }
-              }"
-              @quantity-changed.window="qty = $event.detail.quantity"
-              >
-             
-                {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', x-ref: 'product_form' -%}
-                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                  <input type="hidden" name="quantity" x-model="qty" value="1">
-                  <div class="product-form__buttons">
-                    <button
-                      type="button"
-                      name="add"
-                      @click="addToCart()"
-                      class="add-to-cart-button button__primary w-full justify-center"
-                    {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                    >
-                        <span>
-                          {%- if product.selected_or_first_available_variant.available -%}
-                            {{ 'products.product.add_to_cart' | t }}
-                          {%- else -%}
-                            {{ 'products.product.sold_out' | t }}
-                          {%- endif -%}
-                        </span>
-                    </button>
-                    {%- if block.settings.show_dynamic_checkout -%}
-                      {{ form | payment_button }}
-                    {%- endif -%}
-                  </div>
-                {%- endform -%}
-
-              {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
-
-              {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
-
-              <pickup-availability class="product__pickup-availabilities no-js-hidden"
-                {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %} available{% endif %}
-                data-root-url="{{ routes.root_url }}"
-                data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                data-has-only-default-variant="{{ product.has_only_default_variant }}"
-              >
-                <template>
-                  <pickup-availability-preview class="pickup-availability-preview">
-                    {% render 'icon-unavailable' %}
-                    <div class="pickup-availability-info">
-                      <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
-                      <button class="pickup-availability-button link link--text underlined-link">{{ 'products.product.pickup_availability.refresh' | t }}</button>
-                    </div>
-                  </pickup-availability-preview>
-                </template>
-              </pickup-availability>
-            </div>
-
-            <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+          
           {%- when 'rating' -%}
             {%- if product.metafields.reviews.rating.value != blank -%}
               {% liquid

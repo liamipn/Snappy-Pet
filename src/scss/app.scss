@@ -66,7 +66,7 @@ $btn-height: 44px;
 }
 
 .button__primary {
-    @apply bg-black text-white my-2 px-6 py-5 rounded-sm flex items-center;
+    @apply bg-sp-green-1 text-white my-2 px-6 py-5 rounded-lg flex items-center transition duration-150 ease-out hover:bg-sp-green-2 ;
 }
 
 // product form
