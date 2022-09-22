@@ -47,7 +47,7 @@
             "type": "link_list",
             "settings": {
               "heading": "Quick links",
-              "menu": ""
+              "menu": "footer"
             }
           },
           "footer-2": {
