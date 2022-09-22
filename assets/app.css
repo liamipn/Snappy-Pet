@@ -764,6 +764,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-3\/4 {
   width: 75%;
 }
+.w-36 {
+  width: 9rem;
+}
+.w-32 {
+  width: 8rem;
+}
+.w-28 {
+  width: 7rem;
+}
 .min-w-\[160px\] {
   min-width: 160px;
 }
@@ -1803,6 +1812,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:w-8 {
     width: 2rem;
+  }
+
+  .md\:w-2 {
+    width: 0.5rem;
+  }
+
+  .md\:w-56 {
+    width: 14rem;
   }
 
   .md\:max-w-md {
