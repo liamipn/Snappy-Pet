@@ -6,9 +6,9 @@
 {%- endif -%}
 
 <section class="page-width">
-  <div class="product grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+  <div class="product grid grid-cols-1 md:grid-cols-2 gap-10 mt-6">
 
-    <div class="product__media-wrapper md:col-span-2 relative" x-data="Slider">
+    <div class="product__media-wrapper md:col-span-1 relative" x-data="Slider">
 
       <div class="flex overflow-x-scroll md:grid grid-cols-2 gap-3 snap-x snap-mandatory" x-ref="slider" 
         @keydown.right="next"
@@ -49,7 +49,7 @@
               {{- block.settings.text -}}
             </p>
           {%- when 'title' -%}
-            <h1 class="product__title text-3xl py-3" {{ block.shopify_attributes }}>
+            <h1 class="product__title text-3xl py-4" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
           {%- when 'price' -%}
@@ -287,7 +287,7 @@
                       type="button"
                       name="add"
                       @click="addToCart()"
-                      class="add-to-cart-button  button__primary w-full justify-center"
+                      class="add-to-cart-button button__primary w-full justify-center"
                     {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
                         <span>

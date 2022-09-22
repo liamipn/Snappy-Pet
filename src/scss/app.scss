@@ -25,15 +25,15 @@ $btn-height: 44px;
     }
     // submenu
     .nav__item{
-        &:hover{
-            .nav__item-submenu{
-                display: block;
-            }
-        }
-
-        .nav__item-submenu{
-            display: none;
-        }
+			&:hover{
+				.nav__item-submenu{
+						display: block;
+				}
+			}
+			.nav__item-submenu{
+				display: none;
+				z-index: 1;
+			}
     }
 }
 
@@ -65,9 +65,8 @@ $btn-height: 44px;
     }
 }
 
-.button__primary{
-    @apply bg-black text-white my-2 px-6 rounded-sm flex items-center;
-    min-height: $btn-height;
+.button__primary {
+    @apply bg-black text-white my-2 px-6 py-5 rounded-sm flex items-center;
 }
 
 // product form

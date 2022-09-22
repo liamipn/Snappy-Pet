@@ -139,7 +139,7 @@
       {
         "type": "range",
         "id": "header_width",
-        "min": 800,
+        "min": 600,
         "max": 1600,
         "step": 100,
         "default": 1000,
@@ -149,7 +149,7 @@
       {
         "type": "range",
         "id": "page_width",
-        "min": 800,
+        "min": 600,
         "max": 1600,
         "step": 100,
         "default": 1000,
@@ -159,7 +159,7 @@
       {
         "type": "range",
         "id": "footer_width",
-        "min": 800,
+        "min": 600,
         "max": 1600,
         "step": 100,
         "default": 1000,
