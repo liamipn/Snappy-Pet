@@ -8,6 +8,12 @@
     "page_width": 700,
     "footer_width": 1000,
     "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/snappy-pet.png",
+    "checkout_logo_size": "large",
+    "checkout_body_background_color": "#f1ece7",
+    "checkout_sidebar_background_color": "#ffffff",
+    "checkout_accent_color": "#56700f",
+    "checkout_button_color": "#56700f",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
