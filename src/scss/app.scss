@@ -38,6 +38,12 @@ $btn-height: 44px;
 }
 
 // Helpers
+.header-width {
+    max-width: var(--header-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .page-width{
     max-width: var(--page-width);
     margin: 0 auto;
