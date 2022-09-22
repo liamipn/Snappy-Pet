@@ -106,7 +106,7 @@
                       type="button"
                       name="add"
                       @click="addToCart()"
-                      class="add-to-cart-button button__primary w-full justify-center"
+                      class="add-to-cart-button button__primary w-full justify-center uppercase"
                     {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
                         <span>
@@ -192,7 +192,7 @@
                   x-init="$watch('qty', value =>  $dispatch('quantity-changed', { quantity: value }))"
                   >
 
-                <button type="button" class=" min-h-[44px] w-full flex items-center justify-center cursor-pointer" @click="minus(1)">
+                <button type="button" class=" min-h-[44px] w-full flex items-center justify-center cursor-pointer " @click="minus(1)">
                   <span class="sr-only">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                   {% render 'icon-minus' %}
                 </button>
