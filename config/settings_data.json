@@ -6,6 +6,7 @@
     "type_header_font": "avenir_next_n6",
     "type_body_font": "avenir_next_n4",
     "page_width": 800,
+    "footer_width": 1000,
     "favicon": "shopify:\/\/shop_images\/favicon.png",
     "sections": {
       "announcement-bar": {
