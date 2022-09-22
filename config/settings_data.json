@@ -2,9 +2,12 @@
   "current": {
     "colors_solid_button_labels": "#FFFFFF",
     "colors_accent_1": "#56700f",
+    "colors_text": "#334155",
     "colors_outline_button_labels": "#56700f",
     "type_header_font": "avenir_next_n6",
+    "heading_scale": 105,
     "type_body_font": "avenir_next_n4",
+    "body_scale": 100,
     "page_width": 800,
     "footer_width": 1000,
     "favicon": "shopify:\/\/shop_images\/favicon.png",
