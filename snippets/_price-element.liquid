@@ -1,9 +1,10 @@
 {% if product.available %}
-    <div class="price__element text-gray-600 {{ class }}">
+    <div class="price__element text-slate-900 {{ class }} mb-4">
         {% if product.compare_at_price > product.price %}
-        <div class="price__element-sale">
+        <div class="price__element-sale flex justify-between">
             <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
-            {{ product.price | money }} <s class="text-red-700">{{ product.compare_at_price | money }}</s>
+            <span class="text-2xl font-bold">{{ product.price | money }}</span>
+            <span class="bg-red-700 text-white px-3 py-1 rounded-lg text-sm flex items-center"><s class="">{{ product.compare_at_price | money }}</s></span>
         </div>
         {% elsif product.price_varies %}
             <div class="price__element-varies">

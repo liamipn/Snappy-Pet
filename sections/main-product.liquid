@@ -49,7 +49,7 @@
               {{- block.settings.text -}}
             </p>
           {%- when 'title' -%}
-            <h1 class="product__title text-3xl py-4" {{ block.shopify_attributes }}>
+            <h1 class="product__title text-3xl py-8" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
           {%- when 'price' -%}
@@ -177,7 +177,7 @@
               <label class="form__label sr-only" for="Quantity-{{ section.id }}">
                 {{ 'products.product.quantity.label' | t }}
               </label>
-              <div class="product-qty__wrapper grid grid-cols-3 border border-black" 
+              <div class="product-qty__wrapper grid grid-cols-3 border border-slate-300 w-1/2 rounded-lg" 
                 x-data="{ 
                     qty: 1,
                     minus(value) {
@@ -192,14 +192,14 @@
                   x-init="$watch('qty', value =>  $dispatch('quantity-changed', { quantity: value }))"
                   >
 
-                <button type="button" class=" min-h-[44px] w-full flex items-center justify-center cursor-pointer " @click="minus(1)">
+                <button type="button" class=" min-h-[44px] w-full flex items-center justify-center cursor-pointer hover:bg-slate-100 transition duration-150 ease-out" @click="minus(1)">
                   <span class="sr-only">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                   {% render 'icon-minus' %}
                 </button>
 
-                <input type="number" x-model="qty" name="quantity" class="product-qty__input border-x text-center border-black" value="1" min="1" max="10">
+                <input type="number" x-model="qty" name="quantity" class="product-qty__input text-center" value="1" min="1" max="10">
 
-                <button type="button" class=" min-h-[44px] w-full flex items-center justify-center cursor-pointer" @click="plus(1)">
+                <button type="button" class=" min-h-[44px] w-full flex items-center justify-center cursor-pointer hover:bg-slate-100 transition duration-150 ease-out" @click="plus(1)">
                   <span class="sr-only">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
                   {% render 'icon-plus' %}
                 </button>
