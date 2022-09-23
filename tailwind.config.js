@@ -8,6 +8,7 @@ module.exports = {
     './templates/*.liquid',
     './templates/*.json',
     './templates/customers/*.liquid',
+    './src/**/*.html', './node_modules/flowbite/**/*.js'
   ],
   theme: {
     extend: {
@@ -15,9 +16,12 @@ module.exports = {
         'sp-green-1': '#56700f',
         'sp-green-2': '#43570e',
         'sp-orange-1': '#d5732f',
+        'sp-orange-2': '#a5551e',
         'sp-beige-1': '#f1ece7',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }

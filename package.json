@@ -6,6 +6,7 @@
   "dependencies": {
     "@alpinejs/persist": "^3.10.3",
     "alpinejs": "^3.8.1",
+    "flowbite": "^1.5.3",
     "laravel-mix": "^6.0.41",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",

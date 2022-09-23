@@ -71,6 +71,7 @@
     </main>
 
     {% section 'footer' %}
+    
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
@@ -82,6 +83,6 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     
-  {% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
-        </body>
+    {% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
+  </body>
 </html>

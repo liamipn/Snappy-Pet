@@ -22,20 +22,26 @@
           {% for link in section.settings.menu.links %}
             {% if link.links != blank %}
               <li class="nav__item py-12 px-4 block relative">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  <ul class="nav__item-submenu absolute bg-white border py-3 px-4 min-w-[160px] top-16 left-1/2 transform -translate-x-1/2">
+                <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium border-b border-gray-100 md:hover:bg-transparent md:border-0 hover:text-sp-orange-2 md:p-0 md:w-auto dark:text-gray-400">{{ link.title }} {% render 'icon-dropdown' %}</button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar"
+                  class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+                  data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
+                  style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 10px);">
+                  <ul class="py-1 text-sm" aria-labelledby="dropdownNavbarButton">
                     {% for sublink in linklists[link.handle].links %}
                       <li>
-                        <a class="block py-1 hover:opacity-75 " href="{{ sublink.url }}">
+                        <a class="block py-2 px-4 hover:bg-slate-100" href="{{ sublink.url }}">
                           {{ sublink.title }}
                         </a>
                       </li>
                     {% endfor %}
                   </ul>
+                </div>
               </li>
             {% else %}
               <li>
-                <a class="nav__item py-12 px-4 block" href="{{ link.url }}"> {{ link.title }}</a>
+                <a class="nav__item py-12 px-4 block hover:text-sp-orange-2" href="{{ link.url }}"> {{ link.title }}</a>
               </li>
             {% endif %}
           {% endfor %}
