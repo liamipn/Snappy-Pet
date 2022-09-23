@@ -67,7 +67,7 @@
         
         {% render 'loader' %}
   
-        <select id="sort-by" x-model="sort" @change="sortCollection()" class="py-3 px-4 my-3 border border-black">
+        <select id="sort-by" x-model="sort" @change="sortCollection()" class="py-3 px-4 my-3 border border-slate-300 rounded-lg">
           {% for option in collection.sort_options %}
             <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
               {{ option.name }}
@@ -101,7 +101,7 @@
           </div>
         {%- else -%}
           <div class="collection">
-            <ul id="product-grid" data-id="{{ section.id }}" class="grid grid-cols-3 gap-2">
+            <ul id="product-grid" data-id="{{ section.id }}" class="grid grid-cols-3 gap-4">
               {%- for product in collection.products -%}
   
                 <li class="grid__item">

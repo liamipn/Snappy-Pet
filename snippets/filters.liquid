@@ -45,7 +45,7 @@
               <div class="filter-group-display__header flex justify-between items-center">
                 {%- if filter.active_values.size > 0 -%}
                   <span class="filter-group-display__header-selected text-sm">{{ filter.active_values.size }} selected</span>
-                  <a href="{{ filter.url_to_remove }}" class="reset-btn bg-gray-200 py-1 px-3 text-sm rounded-sm">Reset</a>
+                  <a href="{{ filter.url_to_remove }}" class="reset-btn bg-gray-200 py-1 px-3 text-sm rounded-lg">Reset</a>
                 {%- endif -%}
               </div>
       
@@ -74,7 +74,7 @@
                   </ul>
       
                   <div class="filter-group-display__submit my-2 flex justify-end">
-                    <button type="submit" class="bg-black text-white py-1 px-3 text-sm rounded-sm">
+                    <button type="submit" class="bg-sp-orange-1 text-white py-1 px-3 text-sm rounded-lg hover:bg-sp-orange-2 transition duration-150 ease-out">
                       Apply
                     </button>
                   </div>
@@ -86,7 +86,7 @@
                       <span>{{ cart.currency.symbol }}</span>
                       <input name="{{ filter.min_value.param_name }}"
                         id="Filter-{{ filter.min_value.param_name }}"
-                        class="border border-gray-400 rounded-sm p-1"
+                        class="border border-gray-400 rounded-lg p-1"
                         {% if filter.min_value.value -%}
                           value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
                         {%- endif %}
@@ -103,7 +103,7 @@
                       <span>{{ cart.currency.symbol }}</span>
                       <input name="{{ filter.max_value.param_name }}"
                         id="Filter-{{ filter.max_value.param_name }}"
-                        class="border border-gray-400 rounded-sm p-1"
+                        class="border border-gray-400 rounded-lg p-1"
                         {% if filter.max_value.value -%}
                           value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
                         {%- endif %}
@@ -117,7 +117,7 @@
                   </div>
       
                   <div class="filter-group-display__submit flex justify-end">
-                    <button type="submit" class="bg-black text-white py-1 px-3 text-sm rounded-sm"> {{ 'products.facets.apply' | t }} </button>
+                    <button type="submit" class="bg-sp-orange-1 text-white py-1 px-3 text-sm rounded-lg hover:bg-sp-orange-2 transition duration-150 ease-out"> {{ 'products.facets.apply' | t }} </button>
                   </div>
               {%- endcase -%}
             </div>
