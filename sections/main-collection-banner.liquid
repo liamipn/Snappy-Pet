@@ -10,16 +10,18 @@
 
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width">
-    <div class="collection-hero__text-wrapper">
-      <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+    <div class="collection-hero__text-wrapper pt-6 text-center">
+      <h1 class="collection-hero__title mb-5 text-2xl font-bold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl">
+        <span class="sr-only">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
       </h1>
 
       {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
+        <div class="collection-hero__description rte mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48">{{ collection.description }}</div>
       {%- endif -%}
     </div>
+
+
 
     {%- if section.settings.show_collection_image and collection.image -%}
       <div class="collection-hero__image-container media gradient">
