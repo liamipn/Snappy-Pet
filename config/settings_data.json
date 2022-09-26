@@ -60,26 +60,27 @@
               "subtext": "<p>At Harringtons, we believe in natural for all, whatever their shape or size! Our family-run business has been going since Great-Grandfather Harrington started milling in 1923.<\/p><p>All our food is proudly manufactured right here in the UK, and we use locally sourced ingredients wherever possible.<\/p>"
             }
           },
-          "53c1c391-33d3-4045-94f0-77c637d06874": {
-            "type": "image",
-            "settings": {
-              "image_width": 100,
-              "alignment": "center"
-            }
-          },
           "footer-0": {
             "type": "link_list",
             "settings": {
               "heading": "Company",
               "menu": ""
             }
+          },
+          "53c1c391-33d3-4045-94f0-77c637d06874": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/IPN_logo_28a5f016-7b79-4fb3-b0a5-6e8cc52894cf.png",
+              "image_width": 200,
+              "alignment": "center"
+            }
           }
         },
         "block_order": [
           "footer-1",
           "footer-2",
-          "53c1c391-33d3-4045-94f0-77c637d06874",
-          "footer-0"
+          "footer-0",
+          "53c1c391-33d3-4045-94f0-77c637d06874"
         ],
         "settings": {
           "show_newsletter": false,
