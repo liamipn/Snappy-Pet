@@ -82,7 +82,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Featured products",
-        "collection": "all",
+        "collection": "harringtons-dog-food",
         "products_to_show": 8,
         "color_scheme": "background-1",
         "show_view_all": false,
