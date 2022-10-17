@@ -4,11 +4,11 @@
       "type": "navtive-product-slider",
       "settings": {
         "full_width": false,
-        "title": "Featured collection",
+        "title": "Some of Our Dog Food",
         "align_text": "text-center",
         "font_size": 24,
         "collection": "harringtons-dog-food",
-        "products_to_show": 4,
+        "products_to_show": 16,
         "button": "",
         "button_link": "",
         "grid_desktop": "lg:grid-cols-5",
